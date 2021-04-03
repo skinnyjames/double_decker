@@ -1,9 +1,5 @@
 source "https://www.rubygems.org"
 
-gem "redis"
+gemspec
 
-group :development do 
-  gem "rspec"
-  gem "knapsack"
-end
 

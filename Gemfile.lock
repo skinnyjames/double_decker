@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    double_decker (0.1.2)
+      redis
+
 GEM
   remote: https://www.rubygems.org/
   specs:
@@ -24,8 +30,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  double_decker!
   knapsack
-  redis
   rspec
 
 BUNDLED WITH
