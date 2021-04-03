@@ -27,7 +27,7 @@ steps:
 - name: data
   image: ruby:3.0
   commands: 
-    - cat result.json
+    - bundle exec rspec post_spec
   depends_on: 
     - agent_1
     - agent_2
