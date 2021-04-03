@@ -8,7 +8,7 @@ module DoubleDecker
   class Bus
     attr_reader :run_id, :expected_agents, :finished
 
-    def initialize(run_id, url: "redis://redis", expected_agents: nil, redis: Redis.new(url: url))
+    def initialize(run_id, url: "redis://localhost", expected_agents: nil, redis: Redis.new(url: url))
       @store = redis
       @run_id = run_id
       @expected_agents = expected_agents

@@ -3,6 +3,8 @@ rvm:
  - 3.0
 script: "bundle exec rspec"
 
+service:
+  - redis-server
 env:
   global:
     - MY_GLOBAL_VAR=123
