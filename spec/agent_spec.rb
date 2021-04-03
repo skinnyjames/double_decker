@@ -25,5 +25,12 @@ module DoubleDecker
       @agent_2.finish!
       expect(@bus_payload).to eql({ "1" => {}, "2" => { "three" => "four" }})
     end
+
+    it "order of agents finishing doesn't matter" do
+      @agent_2 = @bus.register
+      @agent_2.finish!
+      @agent.finish!
+      expect(@bus_payload).to eql({ "1" => {}, "2" => {}})
+    end
   end
 end
