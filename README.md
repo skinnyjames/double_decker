@@ -11,7 +11,7 @@ in your Gemfile
 
 ## usage
 
-```
+```ruby
 require "double_decker"
 
 # instatiate the bus with a run id shared across parallel processes
