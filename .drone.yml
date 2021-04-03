@@ -2,23 +2,28 @@ kind: pipeline
 name: default
 type: kubernetes
 
-services:
+steps:
 - name: redis
   image: redis
+  detach: true
 
-steps:
 - name: agent_1
   image: ruby:3.0
   commands: 
     - bundle install
     - gem install knapsack
     - CI_NODE_TOTAL=2 CI_NODE_INDEX=0 knapsack rspec
+  depends_on: 
+    - redis
+
 - name: agent_2
   image: ruby:3.0
   commands: 
     - bundle install
     - gem install knapsack
     - CI_NODE_TOTAL=2 CI_NODE_INDEX=1 knapsack rspec
+  depends_on: 
+    - redis
 - name: data
   image: ruby:3.0
   commands: 
