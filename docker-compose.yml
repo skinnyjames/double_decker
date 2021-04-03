@@ -1,7 +1,7 @@
 web:
   build: .
   volumes:
-    - .:/code
+    - .:/double_decker
   links:
     - redis
 redis:

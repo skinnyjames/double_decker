@@ -2,9 +2,10 @@ module DoubleDecker
   class Agent
     attr_reader :id, :end_time
 
-    def initialize(bus, bus_data, merge_proc: nil)
+    def initialize(bus, bus_data, expected_agents, merge_proc: nil)
       @bus = bus
       @bus_data = bus_data
+      @expected_agents = expected_agents
       @finished = nil
       @merge_proc = merge_proc
       @id = setup!
@@ -28,6 +29,16 @@ module DoubleDecker
     end
 
     def finish!(end_time = DateTime.now)
+      if @expected_agents
+        File.open("test", "w") {|f| f << @bus_data.active_agents}
+        max_tries = 5
+        loop do 
+          break if (@bus_data.active_agents == @expected_agents.to_i) || (max_tries == 5)
+          sleep 1
+          max_tries += 1
+        end
+      end
+      
       @end_time = end_time
       @finished&.call(to_h)
       if last
