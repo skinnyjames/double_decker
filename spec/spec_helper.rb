@@ -1,9 +1,6 @@
 require "rspec"
 require "securerandom"
 require_relative "../src/double_decker"
-require 'knapsack'
-
-Knapsack::Adapters::RSpecAdapter.bind
 
 bus = DoubleDecker::Bus.new 'test-run', expected_agents: ENV['CI_NODE_TOTAL']
 
