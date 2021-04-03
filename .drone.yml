@@ -7,16 +7,20 @@ services:
   image: redis
 
 steps:
-- name: agent 1
-  group: [test]
+- name: agent_1
   image: ruby:3.0
   commands: 
     - bundle install
     - KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=0 rspec
-- name: agent 2
-  group: [test]
+- name: agent_2
   image: ruby:3.0
   commands: 
     - bundle install
     - KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 rspec
-    
+- name: data
+  image: ruby:3.0
+  commands: 
+    - cat result.json
+  depends_on: 
+    - agent_1
+    - agent_2
