@@ -5,7 +5,7 @@ require 'knapsack'
 
 Knapsack::Adapters::RSpecAdapter.bind
 
-bus = DoubleDecker::Bus.new SecureRandom.uuid, expected_agents: 2
+bus = DoubleDecker::Bus.new 'test-run', expected_agents: ENV['KNAPSACK_PRO_CI_NODE_TOTAL']
 
 bus.on_finished do |payload|
   File.open("result.json", "w") do |f|
