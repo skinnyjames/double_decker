@@ -28,17 +28,18 @@ module DoubleDecker
       @finished = block
     end
 
-    def finish!(end_time = DateTime.now)
+    def wait_for_expected_agents(timeout=60)
       if @expected_agents
-        File.open("test", "w") {|f| f << @bus_data.active_agents}
-        max_tries = 60
+        max_tries = timeout
         loop do 
           break if (@bus_data.active_agents == @expected_agents.to_i) || (max_tries == 5)
           sleep 1
           max_tries += 1
         end
       end
-      
+    end
+
+    def finish!(end_time = DateTime.now)
       @end_time = end_time
       @finished&.call(to_h)
       if last
