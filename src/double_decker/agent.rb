@@ -31,7 +31,7 @@ module DoubleDecker
     def finish!(end_time = DateTime.now)
       if @expected_agents
         File.open("test", "w") {|f| f << @bus_data.active_agents}
-        max_tries = 5
+        max_tries = 60
         loop do 
           break if (@bus_data.active_agents == @expected_agents.to_i) || (max_tries == 5)
           sleep 1

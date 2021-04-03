@@ -24,9 +24,11 @@ steps:
     - CI_NODE_TOTAL=2 CI_NODE_INDEX=1 knapsack rspec
   depends_on: 
     - redis
+    
 - name: data
   image: ruby:3.0
   commands: 
+    - bundle install
     - bundle exec rspec post_spec
   depends_on: 
     - agent_1
