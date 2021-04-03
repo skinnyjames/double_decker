@@ -11,12 +11,12 @@ steps:
   image: ruby:3.0
   commands: 
     - bundle install
-    - KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=0 rspec
+    - CI_NODE_TOTAL=2 CI_NODE_INDEX=0 rspec
 - name: agent_2
   image: ruby:3.0
   commands: 
     - bundle install
-    - KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 rspec
+    - CI_NODE_TOTAL=2 CI_NODE_INDEX=1 rspec
 - name: data
   image: ruby:3.0
   commands: 
