@@ -30,6 +30,7 @@ module DoubleDecker
 
     def wait_for_expected_agents(timeout=60)
       if @expected_agents
+        puts "AGENTS: #{@bus_data.active_agents} EXPECTED: #{@expected_agents}"
         max_tries = timeout
         loop do 
           break if (@bus_data.active_agents == @expected_agents.to_i) || (max_tries == 5)
