@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'double_decker'
-  s.version     = '0.1.3'
+  s.version     = '0.1.4'
   s.licenses    = ['MIT']
   s.summary     = "synchronize results from parallel"
   s.description = "Redis bus for aggregating data from parallel processing in Ruby"
