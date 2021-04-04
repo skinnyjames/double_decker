@@ -31,7 +31,8 @@ steps:
     CODECOV_TOKEN:
       from_secret: codecov_token
   commands: 
-    - sh coverage.sh
+    - curl -s https://codecov.io/bash > codecov.sh
+    - bash codecov.sh -t $CODECOV_TOKEN
   depends_on:
     - agent_1
     - agent_2
