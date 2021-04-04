@@ -1,5 +1,7 @@
 require 'simplecov'
 SimpleCov.start
+require 'codecov'
+SimpleCov.formatter = SimpleCov::Formatter::Codecov
 SimpleCov.command_name("rspec_ci_node_#{ENV["CI_NODE_INDEX"]}")
 
 require "rspec"
