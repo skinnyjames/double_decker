@@ -1,4 +1,4 @@
 {
-  "spec/agent_2_spec.rb": 0.00387866699929873,
-  "spec/agent_spec.rb": 0.0024999739998747827
+  "spec/agent_spec.rb": 0.004637200003344333,
+  "spec/parallel_agent_spec.rb": 2.0070256930011965
 }
