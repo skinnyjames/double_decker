@@ -2,14 +2,13 @@
 
 [![Build Status](http://drone.skinnyjames.net/api/badges/skinnyjames/double_decker/status.svg?ref=refs/heads/main)](http://drone.skinnyjames.net/skinnyjames/double_decker)
 
-librarary for parallel aggregation in Ruby
+library for parallel aggregation in Ruby
 
 ## installation
 
 in your Gemfile
 
 `gem "double_decker"`
-
 
 ## usage
 
@@ -36,7 +35,7 @@ at_exit do
 end
 ```
 ## running tests
-`docker-compose build && docker-compose run web rspec`
+`docker-compose build && docker-compose run lib rspec`
 
 
 

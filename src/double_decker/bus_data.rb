@@ -31,8 +31,7 @@ module DoubleDecker
       store.get("#{run_id}_agents").to_i
     end
 
-    def merge(agent_id, hash, &block)
-      block.call(hash) if block
+    def merge(agent_id, hash)
       data = to_h || {}
       data[agent_id.to_s] ||= {}
       data[agent_id.to_s].merge!(hash)

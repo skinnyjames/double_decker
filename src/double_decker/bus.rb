@@ -15,8 +15,8 @@ module DoubleDecker
       setup!
     end
 
-    def register(&merge_proc)
-      agent = Agent.new(self, BusData.new(run_id, @store), expected_agents, merge_proc: merge_proc)
+    def register
+      agent = Agent.new(self, BusData.new(run_id, @store), expected_agents)
       agent.wait_for_expected_agents
       agent
     end

@@ -1,3 +1,7 @@
+require 'simplecov'
+
+SimpleCov.start
+
 require "rspec"
 require "securerandom"
 require_relative "../src/double_decker"
@@ -8,7 +12,6 @@ bus.on_finished do |payload|
   File.open("result.json", "w") do |f|
     f << payload.to_json
   end
-  puts "#{payload.inspect}"
 end
 
 agent = bus.register

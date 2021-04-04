@@ -2,22 +2,17 @@ module DoubleDecker
   class Agent
     attr_reader :id, :end_time
 
-    def initialize(bus, bus_data, expected_agents, merge_proc: nil)
+    def initialize(bus, bus_data, expected_agents)
       @bus = bus
       @bus_data = bus_data
       @expected_agents = expected_agents
       @finished = nil
-      @merge_proc = merge_proc
       @id = setup!
       merge({})
     end
 
-    def merge_like(&block)
-      @merge_proc = block
-    end
-
     def merge(hash)
-      @bus_data.merge(id, hash, &@merge_proc)
+      @bus_data.merge(id, hash)
     end
 
     def to_h

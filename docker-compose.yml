@@ -1,8 +1,8 @@
-web:
+lib:
   build: .
   volumes:
     - .:/double_decker
   links:
-    - redis
+    - redis:localhost
 redis:
   image: redis

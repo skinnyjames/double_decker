@@ -29,7 +29,7 @@ steps:
   image: ruby:3.0
   commands: 
     - bundle install
-    - bundle exec rspec post_spec
+    - CI_NODE_TOTAL=2 bundle exec rspec post_spec
   depends_on: 
     - agent_1
     - agent_2
