@@ -1,6 +1,14 @@
 require 'simplecov'
 SimpleCov.start
 require 'codecov'
+
+class SimpleCov::Formatter::Codecov
+  def format(result, disable_net_blockers = true)
+    report = Codecov::SimpleCov::Formatter.new.format(result)
+  end
+end
+
+
 SimpleCov.formatter = SimpleCov::Formatter::Codecov
 SimpleCov.command_name("rspec_ci_node_#{ENV["CI_NODE_INDEX"]}")
 
