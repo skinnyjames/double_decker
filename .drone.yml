@@ -31,7 +31,8 @@ steps:
     token: 
       from_secret: coveralls_token
     files: 
-      - ./lcov.info
+      - ./coverage/.last_run.json
+      - ./coverage/.resultset.json
   depends_on:
     - agent_1
     - agent_2
