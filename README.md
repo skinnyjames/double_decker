@@ -2,7 +2,7 @@
 
 [![Build Status](http://drone.skinnyjames.net/api/badges/skinnyjames/double_decker/status.svg?ref=refs/heads/main)](http://drone.skinnyjames.net/skinnyjames/double_decker)
 
-Redis bus for aggregating data from parallel processing in Ruby
+librarary for parallel aggregation in Ruby
 
 ## installation
 
