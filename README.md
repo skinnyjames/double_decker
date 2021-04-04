@@ -1,6 +1,6 @@
 # double_decker
 
-[![Build Status](http://drone.skinnyjames.net/api/badges/skinnyjames/double_decker/status.svg?ref=refs/heads/main)](http://drone.skinnyjames.net/skinnyjames/double_decker)
+[![Build Status](http://drone.skinnyjames.net/api/badges/skinnyjames/double_decker/status.svg?ref=refs/heads/main)](http://drone.skinnyjames.net/skinnyjames/double_decker) [![codecov](https://codecov.io/gh/skinnyjames/double_decker/branch/main/graph/badge.svg)](https://codecov.io/gh/skinnyjames/double_decker)
 
 library for parallel aggregation in Ruby
 
