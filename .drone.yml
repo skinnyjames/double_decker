@@ -31,7 +31,7 @@ steps:
     CODECOV_TOKEN:
       from_secret: codecov_token
   commands: 
-    - sh coverages.sh
+    - sh coverage.sh
   depends_on:
     - agent_1
     - agent_2
