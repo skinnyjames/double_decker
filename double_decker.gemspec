@@ -13,5 +13,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'redis'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'knapsack'
-  s.add_development_dependency 'coveralls'
+  s.add_development_dependency 'codecov'
 end

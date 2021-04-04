@@ -25,14 +25,13 @@ steps:
   depends_on: 
     - redis
 
-- name: coveralls
-  image: lizheming/drone-coveralls
-  settings: 
-    token: 
-      from_secret: coveralls_token
-    files: 
-      - ./coverage/.last_run.json
-      - ./coverage/.resultset.json
+- name: codecov
+  image: ruby:3.0
+  environment:
+    CODECOV_TOKEN:
+      from_secret: codecov_token
+  commands: 
+    - bash <(curl -s https://codecov.io/bash)
   depends_on:
     - agent_1
     - agent_2
@@ -43,4 +42,4 @@ steps:
     - bundle install
     - CI_NODE_TOTAL=2 bundle exec rspec post_spec
   depends_on: 
-    - coveralls
+    - codecov
