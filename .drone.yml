@@ -24,12 +24,22 @@ steps:
     - CI_NODE_TOTAL=2 CI_NODE_INDEX=1 knapsack rspec
   depends_on: 
     - redis
-    
-- name: data
+
+- name: coveralls
+  image: lizheming/drone-coveralls
+  settings: 
+    token: 
+      from_secret: coveralls_token
+    files: 
+      - ./lcov.info
+  depends_on:
+    - agent_1
+    - agent_2
+
+- name: post validation
   image: ruby:3.0
   commands: 
     - bundle install
     - CI_NODE_TOTAL=2 bundle exec rspec post_spec
   depends_on: 
-    - agent_1
-    - agent_2
+    - coveralls
